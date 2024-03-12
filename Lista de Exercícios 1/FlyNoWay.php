@@ -1,5 +1,7 @@
 <?php
 
+require_once './FlyBehaviour.php';
+
 class FlyNoWay implements FlyBehaviour {
 
     public function fly() {

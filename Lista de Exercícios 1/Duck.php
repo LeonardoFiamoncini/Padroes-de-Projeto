@@ -1,5 +1,8 @@
 <?php
 
+require_once './QuackBehaviour.php';
+require_once './FlyBehaviour.php';
+
 abstract class Duck {
     
     /**
