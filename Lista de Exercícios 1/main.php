@@ -5,22 +5,32 @@ require_once './RedheadDuck.php';
 require_once './RubberDuck.php';
 require_once './DecoyDuck.php';
 
+echo "\n\n\n__MallardDuck__\n";
+
 $mallardDuck = new MallardDuck();
 $mallardDuck->display();
-$mallardDuck->fly();
-$mallardDuck->quack();
+$mallardDuck->performFly();
+// var_dump($mallardDuck);
+
+echo "\n\n\n__RedheadDuck__\n";
 
 $redheadDuck = new RedheadDuck();
 $redheadDuck->display();
-$redheadDuck->fly();
-$redheadDuck->quack();
+$redheadDuck->performFly();
+// var_dump($redheadDuck);
+
+echo "\n\n\n__RubberDuck__\n";
 
 $rubberDuck = new RubberDuck();
 $rubberDuck->display();
-$rubberDuck->fly();
-$rubberDuck->quack();
+$rubberDuck->performFly();
+$rubberDuck->performQuack();
+// var_dump($rubberDuck);
+
+echo "\n\n\n__DecoyDuck__\n";
 
 $decoyDuck = new DecoyDuck();
 $decoyDuck->display();
-$decoyDuck->fly();
-$decoyDuck->quack();
+$decoyDuck->performFly();
+$decoyDuck->performQuack();
+// var_dump($decoyDuck);
