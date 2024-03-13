@@ -4,7 +4,7 @@ require_once './DefinirValorComportamento.php';
 
 class DefinirValorComEdificacao implements DefinirValorComportamento {
     
-    public function definirValor(char $localizacao, float $espaco, ?int $comodos = null) {
+    public function definirValor(string $localizacao, float $espaco, ?int $comodos = null) {
         if (empty($comodos)){
             echo "\nERRO! É necessário informar o número de cômodos para imóveis com edificação!\n";
             return;
@@ -28,10 +28,10 @@ class DefinirValorComEdificacao implements DefinirValorComportamento {
                 return;
         }
 
-        $valorComodo = ((int) $comodo) * 1000;
+        $valorComodos = ((int) $comodos) * 1000;
 
-        $valorTotal = $valorComodo + $valorComodo;
+        $valorTotal = $valorM2 + $valorComodos;
 
-        echo "\nO valor de venda calculado para o imóvel informado é: R$" . $number_format($valorTotal, 2, ',', '.') . "\n";
+        echo "\nO valor de venda calculado para o imóvel informado é: R$" . number_format($valorTotal, 2, ',', '.') . "\n";
     }
 }

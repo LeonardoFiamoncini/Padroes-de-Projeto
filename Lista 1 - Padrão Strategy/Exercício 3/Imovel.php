@@ -15,7 +15,7 @@ abstract class Imovel {
     protected $espaco;
 
     /**
-     * char $localizacao
+     * string $localizacao
      */
     protected $localizacao;
 
@@ -25,10 +25,11 @@ abstract class Imovel {
     protected $comportamentoValor;
 
 
-    public function __construct(char $localizacao, float $espaco, int $comodos) {
+    public function __construct(string $localizacao, float $espaco, ?int $comodos = null) {
         $this->localizacao = $localizacao;
         $this->espaco = $espaco;
-        $this->comodos = $comodos;
+
+        if (!empty($comodos)) $this->comodos = $comodos;
     }
 
     public function setValorComportamento(DefinirValorComportamento $comportamento) {
@@ -39,7 +40,7 @@ abstract class Imovel {
         $this->comportamentoValor->definirValor($this->localizacao, $this->espaco, $this->comodos ?? null);
     }
 
-    public function setLocalizacao(char $localizacao) {
+    public function setLocalizacao(string $localizacao) {
         $this->localizacao = $localizacao;
     }
     

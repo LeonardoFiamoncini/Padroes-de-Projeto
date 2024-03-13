@@ -5,9 +5,7 @@ require_once './DefinirValorComEdificacao.php';
 
 class Apartamento extends Imovel {
 
-    public function __construct(char $localizacao, float $espaco, int $comodos) {
-        var_dump($localizacao);
-        exit();
+    public function __construct(string $localizacao, float $espaco, int $comodos) {
         parent::__construct($localizacao, $espaco, $comodos);
         $this->comportamentoValor = new DefinirValorComEdificacao();
     }

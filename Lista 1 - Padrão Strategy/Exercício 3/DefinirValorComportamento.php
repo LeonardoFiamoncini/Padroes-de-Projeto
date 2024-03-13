@@ -1,5 +1,5 @@
 <?php
 
 interface DefinirValorComportamento {
-    public function definirValor(char $localizacao, float $espaco, ?int $comodos = null);
+    public function definirValor(string $localizacao, float $espaco, ?int $comodos = null);
 }
