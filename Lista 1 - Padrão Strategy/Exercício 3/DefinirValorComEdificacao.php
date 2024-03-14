@@ -11,7 +11,9 @@ class DefinirValorComEdificacao implements DefinirValorComportamento {
         }        
 
         $valorTotal = 0;
-    
+
+        $localizacao = strtoupper($localizacao);
+
         switch($localizacao) {
             case 'A':
                 $valorM2 = $espaco * 3000;
@@ -32,6 +34,6 @@ class DefinirValorComEdificacao implements DefinirValorComportamento {
 
         $valorTotal = $valorM2 + $valorComodos;
 
-        echo "\nO valor de venda calculado para o imóvel informado é: R$" . number_format($valorTotal, 2, ',', '.') . "\n";
+        echo "\nO valor de venda calculado para o imóvel informado é: R$ " . number_format($valorTotal, 2, ',', '.') . "\n";
     }
 }
