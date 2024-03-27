@@ -2,7 +2,7 @@
 
 require_once './DisplayElement.php';
 require_once './Observer.php';
-require_once './Subject.php';
+require_once './WeatherData.php';
 
 class CurrentConditionsDisplay implements DisplayElement, Observer {
     
@@ -30,7 +30,7 @@ class CurrentConditionsDisplay implements DisplayElement, Observer {
     public function __construct(Subject $weatherData)
     {
         $this->weatherData = $weatherData;
-        $weatherData->registerObserver($this);
+        $this->weatherData->registerObserver($this);
     }
 
     public function update($subject)
