@@ -85,6 +85,7 @@ class StatisticsDisplay implements DisplayElement, Observer {
             asort($this->temperatures);
             $this->minTemperature = reset($this->temperatures);
             $this->maxTemperature = end($this->temperatures);
+            $this->avgTemperature = array_sum($this->temperatures) / count($this->temperatures);
         }
         
         if (!empty($subject->getHumidity())) {
@@ -92,6 +93,7 @@ class StatisticsDisplay implements DisplayElement, Observer {
             asort($this->humidities);
             $this->minHumidity = reset($this->humidities);
             $this->maxHumidity = end($this->humidities);
+            $this->avgHumidity = array_sum($this->humidities) / count($this->humidities);
         }
 
         if (!empty($subject->getPressure())) {
@@ -99,6 +101,7 @@ class StatisticsDisplay implements DisplayElement, Observer {
             asort($this->pressures);
             $this->minPressure = reset($this->pressures);
             $this->maxPressure = end($this->pressures);
+            $this->avgPressure = array_sum($this->pressures) / count($this->pressures);
         }
 
         $this->display();
@@ -106,15 +109,15 @@ class StatisticsDisplay implements DisplayElement, Observer {
 
     public function display()
     {
-        echo "\n\nTemperatures obtained - Min: " . $this->minTemperature . " - Max: " . $this->maxTemperature . "\n\n";
+        echo "\n\nTemperatures obtained - Min: " . $this->minTemperature . " - Max: " . $this->maxTemperature . " - Avg: " . $this->avgTemperature . "\n\n";
         print_r($this->temperatures);
 
 
-        echo "\n\nHumidities obtained - Min: " . $this->minHumidity . " - Max: " . $this->maxHumidity . "\n\n";
+        echo "\n\nHumidities obtained - Min: " . $this->minHumidity . " - Max: " . $this->maxHumidity . " - Avg: " . $this->avgHumidity . "\n\n";
         print_r($this->humidities);
         
         
-        echo "\n\nPressures obtained - Min: " . $this->minPressure . " - Max: " . $this->maxPressure . "\n\n";
+        echo "\n\nPressures obtained - Min: " . $this->minPressure . " - Max: " . $this->maxPressure . " - Avg: " . $this->avgPressure . "\n\n";
         print_r($this->pressures);
     }
 }
