@@ -8,19 +8,22 @@ $weatherData = new WeatherData();
 
 $currentDisplay = new CurrentConditionsDisplay($weatherData);
 $statisticsDisplay = new StatisticsDisplay($weatherData);
-// $forecastDisplay = new ForecastDisplay($weatherData);
 
-echo "\nFirst Measurement\n";
+echo "\n\n\n__First Measurement__\n";
 $weatherData->setMeasurements(35, 18, 50);
 echo "\n\n\n\n\n";
-echo "\nSecond Measurement\n";
+
+echo "\n\n\n__Second Measurement__\n";
 $weatherData->setMeasurements(38, 21, 49);
 echo "\n\n\n\n\n";
-echo "\nThird Measurement\n";
+
+echo "\n\n\n__Third Measurement__\n";
 $weatherData->setMeasurements(41, 25, 48);
 echo "\n\n\n\n\n";
-echo "\nFourth Measurement\n";
+
+echo "\n\n\n__Fourth Measurement__\n";
 $weatherData->setMeasurements(40, 24, 49);
 echo "\n\n\n\n\n";
-echo "\nFifth Measurement\n";
+
+echo "\n\n\n__Fifth Measurement__\n";
 $weatherData->setMeasurements(39, 26, 49);
