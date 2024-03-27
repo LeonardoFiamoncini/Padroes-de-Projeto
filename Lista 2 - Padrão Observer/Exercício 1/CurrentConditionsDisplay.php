@@ -22,15 +22,15 @@ class CurrentConditionsDisplay implements DisplayElement, Observer {
     protected $pressure;
 
     /**
-     * Subject $weatherData
+     * WeatherData $subject
      */
-    protected $weatherData;
+    protected $subject;
 
 
-    public function __construct(Subject $weatherData)
+    public function __construct(Subject $subject)
     {
-        $this->weatherData = $weatherData;
-        $this->weatherData->registerObserver($this);
+        $this->subject = $subject;
+        $this->subject->registerObserver($this);
     }
 
     public function update($subject)
