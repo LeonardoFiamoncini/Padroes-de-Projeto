@@ -2,52 +2,119 @@
 
 require_once './DisplayElement.php';
 require_once './Observer.php';
-require_once './Subject.php';
+require_once './WeatherData.php';
 
 class StatisticsDisplay implements DisplayElement, Observer {
     
     /**
-     * float $temperature
+     * float $minTemperature
      */
-    protected $temperature;
+    protected $minTemperature;
+        
+    /**
+     * float $maxTemperature
+     */
+    protected $maxTemperature;
+
+    /**
+     * array $temperatures
+     */
+    protected $temperatures = array();
+
+    /**
+     * float $avgTemperature
+     */
+    protected $avgTemperature;
     
     /**
-     * float $humidity
+     * float $minHumidity
      */
-    protected $humidity;
+    protected $minHumidity;
+        
+    /**
+     * float $maxHumidity
+     */
+    protected $maxHumidity;
 
     /**
-     * float $pressure
+     * array $humidities
      */
-    protected $pressure;
+    protected $humidities = array();
 
     /**
-     * Subject $weatherData
+     * float $avgHumidity
      */
-    protected $weatherData;
+    protected $avgHumidity;
+    
+    /**
+     * float $minPressure
+     */
+    protected $minPressure;
+        
+    /**
+     * float $maxPressure
+     */
+    protected $maxPressure;
+
+    /**
+     * array $pressures
+     */
+    protected $pressures = array();
+
+    /**
+     * float $avgPressure
+     */
+    protected $avgPressure;
+
+    /**
+     * WeatherData $subject
+     */
+    protected $subject;
 
 
-    public function __construct(Subject $weatherData)
+    public function __construct(Subject $subject)
     {
-        $this->weatherData = $weatherData;
-        $weatherData->registerObserver($this);
+        $this->subject = $subject;
+        $this->subject->registerObserver($this);
     }
 
     public function update($subject)
     {
-        $this->temperature = $subject->getTemperature();
-        $this->humidity = $subject->getHumidity();
-        $this->pressure = $subject->getPressure();
+        if (!empty($subject->getTemperature())) {
+            array_push($this->temperatures, $subject->getTemperature());
+            asort($this->temperatures);
+            $this->minTemperature = reset($this->temperatures);
+            $this->maxTemperature = end($this->temperatures);
+        }
+        
+        if (!empty($subject->getHumidity())) {
+            array_push($this->humidities, $subject->getHumidity());
+            asort($this->humidities);
+            $this->minHumidity = reset($this->humidities);
+            $this->maxHumidity = end($this->humidities);
+        }
+
+        if (!empty($subject->getPressure())) {
+            array_push($this->pressures, $subject->getPressure());
+            asort($this->pressures);
+            $this->minPressure = reset($this->pressures);
+            $this->maxPressure = end($this->pressures);
+        }
 
         $this->display();
     }
 
     public function display()
     {
-        printf("\n Temperature: %d \n Pressure: %d \n Humidity: %d \n",
-            $this->temperature,
-            $this->pressure,
-            $this->humidity
-        );
+        echo "\n\nTemperatures obtained - Min: " . $this->minTemperature . " - Max: " . $this->maxTemperature . "\n\n";
+        print_r($this->temperatures);
+
+
+        echo "\n\nHumidities obtained - Min: " . $this->minHumidity . " - Max: " . $this->maxHumidity . "\n\n";
+        print_r($this->humidities);
+        
+        
+        echo "\n\nPressures obtained - Min: " . $this->minPressure . " - Max: " . $this->maxPressure . "\n\n";
+        print_r($this->pressures);
     }
 }

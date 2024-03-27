@@ -35,9 +35,9 @@ class CurrentConditionsDisplay implements DisplayElement, Observer {
 
     public function update($subject)
     {
-        $this->temperature = $subject->getTemperature();
-        $this->humidity = $subject->getHumidity();
-        $this->pressure = $subject->getPressure();
+        $this->temperature = !empty($subject->getTemperature()) ? ($subject->getTemperature()) : ($this->temperature);
+        $this->humidity = !empty($subject->getHumidity()) ? ($subject->getHumidity()) : ($this->humidity);
+        $this->pressure = !empty($subject->getPressure()) ? ($subject->getPressure()) : ($this->pressure);
 
         $this->display();
     }
