@@ -4,13 +4,14 @@ require_once './DisplayElement.php';
 require_once './Observer.php';
 require_once './WeatherData.php';
 
-class ForecastDisplay implements DisplayElement, Observer {
-    
+class ForecastDisplay implements DisplayElement, Observer
+{
+
     /**
      * float $temperature
      */
     protected $temperature;
-    
+
     /**
      * float $humidity
      */

@@ -1,5 +1,6 @@
 <?php
 
-interface FlyBehaviour {
+interface FlyBehaviour
+{
     public function fly();
 }

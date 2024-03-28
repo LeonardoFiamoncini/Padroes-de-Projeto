@@ -1,5 +1,6 @@
 <?php
 
-interface MovimentacaoStrategy {
+interface MovimentacaoStrategy
+{
     public function movimentar();
 }

@@ -2,19 +2,21 @@
 
 require_once './DefinirValorComportamento.php';
 
-class DefinirValorComEdificacao implements DefinirValorComportamento {
-    
-    public function definirValor(string $localizacao, float $espaco, ?int $comodos = null) {
-        if (empty($comodos)){
+class DefinirValorComEdificacao implements DefinirValorComportamento
+{
+
+    public function definirValor(string $localizacao, float $espaco, ?int $comodos = null)
+    {
+        if (empty($comodos)) {
             echo "\nERRO! É necessário informar o número de cômodos para imóveis com edificação!\n";
             return;
-        }        
+        }
 
         $valorTotal = 0;
 
         $localizacao = strtoupper($localizacao);
 
-        switch($localizacao) {
+        switch ($localizacao) {
             case 'A':
                 $valorM2 = $espaco * 3000;
                 break;
@@ -26,11 +28,11 @@ class DefinirValorComEdificacao implements DefinirValorComportamento {
                 break;
             default:
                 echo "\nERRO! Região inexistente. Por favor, informe se o seu imóvel se encontra"
-                . " na região 'A', 'B' ou 'C'.\n";
+                    . " na região 'A', 'B' ou 'C'.\n";
                 return;
         }
 
-        $valorComodos = ((int) $comodos) * 1000;
+        $valorComodos = ((int)$comodos) * 1000;
 
         $valorTotal = $valorM2 + $valorComodos;
 

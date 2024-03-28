@@ -2,9 +2,11 @@
 
 require_once './QuackBehaviour.php';
 
-class MuteQuack implements QuackBehaviour {
+class MuteQuack implements QuackBehaviour
+{
 
-    public function quack() {
+    public function quack()
+    {
         echo "\nCan't quack...\n";
     }
 }

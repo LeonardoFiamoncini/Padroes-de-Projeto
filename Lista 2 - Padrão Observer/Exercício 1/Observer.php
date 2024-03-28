@@ -1,5 +1,6 @@
 <?php
 
-interface Observer {
+interface Observer
+{
     public function update($subject);
 }

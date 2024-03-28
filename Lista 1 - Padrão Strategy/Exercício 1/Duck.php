@@ -3,38 +3,44 @@
 require_once './QuackBehaviour.php';
 require_once './FlyBehaviour.php';
 
-abstract class Duck {
-    
+abstract class Duck
+{
+
     /**
-    * FlyBehaviour $flyBehaviour
-    */
+     * FlyBehaviour $flyBehaviour
+     */
     protected $flyBehaviour;
 
     /**
-    * QuackBehaviour $quackBehaviour
-    */
+     * QuackBehaviour $quackBehaviour
+     */
     protected $quackBehaviour;
 
 
-    public function setFlyBehaviour(FlyBehaviour $fb) {
+    public function setFlyBehaviour(FlyBehaviour $fb)
+    {
         $this->flyBehaviour = $fb;
     }
 
-    public function setQuackBehaviour(QuackBehaviour $qb) {
+    public function setQuackBehaviour(QuackBehaviour $qb)
+    {
         $this->quackBehaviour = $qb;
     }
 
-    public function performFly() {
+    public function performFly()
+    {
         $this->flyBehaviour->fly();
     }
-    
-    public function performQuack() {
+
+    public function performQuack()
+    {
         $this->quackBehaviour->quack();
-    }  
+    }
 
     abstract function display();
 
-    public function swim() {
+    public function swim()
+    {
         echo "\nDuck's swimming...\n";
     }
 }

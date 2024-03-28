@@ -2,17 +2,19 @@
 
 require_once './DefinirValorComportamento.php';
 
-class DefinirValorSemEdificacao implements DefinirValorComportamento {
-    
-    public function definirValor(string $localizacao, float $espaco, ?int $comodos = null) {
-        if (!empty($comodos)){
+class DefinirValorSemEdificacao implements DefinirValorComportamento
+{
+
+    public function definirValor(string $localizacao, float $espaco, ?int $comodos = null)
+    {
+        if (!empty($comodos)) {
             echo "\nERRO! O Imóvel informado possui cômodos. Portanto, verifique o cálculo do IPTU para imóveis com edificação, por favor.\n";
             return;
-        }        
+        }
 
         $localizacao = strtoupper($localizacao);
-    
-        switch($localizacao) {
+
+        switch ($localizacao) {
             case 'A':
                 echo "\nO valor de venda calculado para o imóvel informado é: R$ " . number_format(($espaco * 1500), 2, ',', '.') . "\n";
                 break;
@@ -24,7 +26,7 @@ class DefinirValorSemEdificacao implements DefinirValorComportamento {
                 break;
             default:
                 echo "\nERRO! Região inexistente. Por favor, informe se o seu imóvel se encontra"
-                . " na região 'A', 'B' ou 'C'.\n";
+                    . " na região 'A', 'B' ou 'C'.\n";
         }
     }
 }

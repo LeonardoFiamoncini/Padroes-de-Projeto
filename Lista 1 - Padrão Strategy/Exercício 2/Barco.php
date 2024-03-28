@@ -2,7 +2,8 @@
 
 require_once './MovimentacaoStrategy.php';
 
-abstract class Barco {
+abstract class Barco
+{
 
     /**
      * boolean $parado
@@ -19,17 +20,20 @@ abstract class Barco {
      */
     protected $movimento;
 
-    public function setMovimento(MovimentacaoStrategy $ms) {
+    public function setMovimento(MovimentacaoStrategy $ms)
+    {
         $this->movimento = $ms;
     }
 
-    public function performaMovimento() {
+    public function performaMovimento()
+    {
         $this->movimento->movimentar();
         $this->parado = false;
         $this->emMovimento = true;
     }
 
-    public function parar() {
+    public function parar()
+    {
         if ($this->parado) {
             echo "\nO barco já está parado!\n";
         } else {
@@ -38,15 +42,18 @@ abstract class Barco {
         }
     }
 
-    public function estaParado() {
+    public function estaParado()
+    {
         echo ($this->parado) ? "\nO barco está parado...\n" : "\nO barco não está parado!\n";
     }
 
-    public function setParado(bool $parado) {
-        $this->parado = (bool) $parado;
+    public function setParado(bool $parado)
+    {
+        $this->parado = (bool)$parado;
     }
-    
-    public function getParado() {
+
+    public function getParado()
+    {
         return $this->parado;
     }
 }

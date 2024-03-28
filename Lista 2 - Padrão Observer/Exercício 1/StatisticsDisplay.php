@@ -4,13 +4,14 @@ require_once './DisplayElement.php';
 require_once './Observer.php';
 require_once './WeatherData.php';
 
-class StatisticsDisplay implements DisplayElement, Observer {
-    
+class StatisticsDisplay implements DisplayElement, Observer
+{
+
     /**
      * float $minTemperature
      */
     protected $minTemperature;
-        
+
     /**
      * float $maxTemperature
      */
@@ -25,12 +26,12 @@ class StatisticsDisplay implements DisplayElement, Observer {
      * float $avgTemperature
      */
     protected $avgTemperature;
-    
+
     /**
      * float $minHumidity
      */
     protected $minHumidity;
-        
+
     /**
      * float $maxHumidity
      */
@@ -45,12 +46,12 @@ class StatisticsDisplay implements DisplayElement, Observer {
      * float $avgHumidity
      */
     protected $avgHumidity;
-    
+
     /**
      * float $minPressure
      */
     protected $minPressure;
-        
+
     /**
      * float $maxPressure
      */
@@ -87,7 +88,7 @@ class StatisticsDisplay implements DisplayElement, Observer {
             $this->maxTemperature = end($this->temperatures);
             $this->avgTemperature = array_sum($this->temperatures) / count($this->temperatures);
         }
-        
+
         if (!empty($subject->getHumidity())) {
             array_push($this->humidities, $subject->getHumidity());
             asort($this->humidities);
@@ -115,8 +116,8 @@ class StatisticsDisplay implements DisplayElement, Observer {
 
         echo "\n\nHumidities obtained - Min: " . $this->minHumidity . " - Max: " . $this->maxHumidity . " - Avg: " . $this->avgHumidity . "\n\n";
         print_r($this->humidities);
-        
-        
+
+
         echo "\n\nPressures obtained - Min: " . $this->minPressure . " - Max: " . $this->maxPressure . " - Avg: " . $this->avgPressure . "\n\n";
         print_r($this->pressures);
     }

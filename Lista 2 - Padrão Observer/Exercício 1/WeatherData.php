@@ -2,18 +2,19 @@
 
 require_once './Subject.php';
 
-class WeatherData implements Subject {
+class WeatherData implements Subject
+{
 
     /**
      * float $temperature
      */
     protected $temperature;
-    
+
     /**
      * float $humidity
      */
     protected $humidity;
-    
+
     /**
      * float $pressure
      */
@@ -25,32 +26,38 @@ class WeatherData implements Subject {
     protected $observers = array();
 
 
-    public function setTemperature(float $temperature) {
+    public function setTemperature(float $temperature)
+    {
         $this->temperature = $temperature;
         $this->measurementsChanged();
     }
 
-    public function getTemperature() {
+    public function getTemperature()
+    {
         return $this->temperature;
     }
 
 
-    public function setHumidity(float $humidity) {
+    public function setHumidity(float $humidity)
+    {
         $this->humidity = $humidity;
         $this->measurementsChanged();
     }
 
-    public function getHumidity() {
+    public function getHumidity()
+    {
         return $this->humidity;
     }
 
 
-    public function setPressure(float $pressure) {
+    public function setPressure(float $pressure)
+    {
         $this->pressure = $pressure;
         $this->measurementsChanged();
     }
 
-    public function getPressure() {
+    public function getPressure()
+    {
         return $this->pressure;
     }
 
@@ -84,7 +91,7 @@ class WeatherData implements Subject {
         $this->pressure = $pressure;
         $this->measurementsChanged();
     }
-    
+
 
     public function measurementsChanged()
     {

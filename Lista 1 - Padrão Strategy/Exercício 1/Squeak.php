@@ -2,9 +2,11 @@
 
 require_once './QuackBehaviour.php';
 
-class Squeak implements QuackBehaviour {
+class Squeak implements QuackBehaviour
+{
 
-    public function quack() {
+    public function quack()
+    {
         echo "\nRubber duckie squeak...\n";
     }
 }

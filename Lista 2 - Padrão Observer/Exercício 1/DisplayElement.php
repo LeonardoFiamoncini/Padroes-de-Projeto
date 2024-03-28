@@ -1,5 +1,6 @@
 <?php
 
-interface DisplayElement {
+interface DisplayElement
+{
     public function display();
 }

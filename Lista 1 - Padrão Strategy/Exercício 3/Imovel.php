@@ -2,7 +2,8 @@
 
 require_once './DefinirValorComportamento.php';
 
-abstract class Imovel {
+abstract class Imovel
+{
 
     /**
      * int $comodos
@@ -25,42 +26,51 @@ abstract class Imovel {
     protected $comportamentoValor;
 
 
-    public function __construct(string $localizacao, float $espaco, ?int $comodos = null) {
+    public function __construct(string $localizacao, float $espaco, ?int $comodos = null)
+    {
         $this->localizacao = $localizacao;
         $this->espaco = $espaco;
 
         if (!empty($comodos)) $this->comodos = $comodos;
     }
 
-    public function setValorComportamento(DefinirValorComportamento $comportamento) {
+    public function setValorComportamento(DefinirValorComportamento $comportamento)
+    {
         $this->comportamentoValor = $comportamento;
     }
 
-    public function getValorComportamento() {
+    public function getValorComportamento()
+    {
         $this->comportamentoValor->definirValor($this->localizacao, $this->espaco, $this->comodos ?? null);
     }
 
-    public function setLocalizacao(string $localizacao) {
+    public function setLocalizacao(string $localizacao)
+    {
         $this->localizacao = $localizacao;
     }
-    
-    public function getLocalizacao() {
+
+    public function getLocalizacao()
+    {
         return $this->localizacao;
     }
-    
-    public function setEspaco(float $espaco) {
+
+    public function setEspaco(float $espaco)
+    {
         $this->espaco = $espaco;
     }
-    
-    public function getEspaco() {
+
+    public function getEspaco()
+    {
         return $this->espaco;
     }
-    
-    public function setComodos(int $comodos) {
+
+    public function setComodos(int $comodos)
+    {
         $this->comodos = $comodos;
     }
-    
-    public function getComodos() {
+
+    public function getComodos()
+    {
         return $this->comodos;
     }
 }
