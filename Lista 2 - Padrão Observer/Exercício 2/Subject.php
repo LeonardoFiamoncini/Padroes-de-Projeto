@@ -10,7 +10,7 @@ class Subject
 
     public function registerObserver(Observer $observer)
     {
-        $this->observers[] = $observer;
+        array_push($this->observers, $observer);
     }
 
     public function removeObserver(Observer $observer)
