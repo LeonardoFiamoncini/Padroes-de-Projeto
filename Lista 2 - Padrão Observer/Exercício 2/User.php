@@ -1,19 +1,25 @@
 <?php
+
 require_once "./Observer.php";
 
-class User implements Observer
-{
+class User implements Observer {
+
+    /**
+     * @var string $name
+     */
     protected $name;
+
+    /**
+     * @var Notifier $notifier
+     */
     protected $notifier;
     
-    public function __construct($name, Notifier $notifier)
-    {
+    public function __construct($name, Notifier $notifier) {
         $this->name = $name;
         $this->notifier = $notifier;
     }
     
-    public function update($product = null)
-    {
+    public function update($product = null) {
         if (isset($product["price"])) {
             $this->notifier->sendPriceNotification($this, $product);
         } else {
@@ -21,8 +27,7 @@ class User implements Observer
         }
     }
     
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 }
