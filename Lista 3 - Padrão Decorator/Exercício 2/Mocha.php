@@ -16,6 +16,7 @@ class Mocha extends CondimentDecorator
     public function __construct(Beverage $beverage)
     {
         $this->beverage = $beverage;
+        $this->setSize($beverage->getSize());
     }
 
     /**
@@ -31,6 +32,6 @@ class Mocha extends CondimentDecorator
      */
     public function cost()
     {
-        return 0.20 + $this->beverage->cost();
+        return (0.20 * (parent::cost())) + $this->beverage->cost();
     }
 }

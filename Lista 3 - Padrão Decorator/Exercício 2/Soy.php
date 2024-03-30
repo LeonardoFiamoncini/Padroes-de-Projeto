@@ -16,6 +16,7 @@ class Soy extends CondimentDecorator
     public function __construct(Beverage $beverage)
     {
         $this->beverage = $beverage;
+        $this->setSize($beverage->getSize());
     }
 
     /**
@@ -31,6 +32,6 @@ class Soy extends CondimentDecorator
      */
     public function cost()
     {
-        return 0.15 + $this->beverage->cost();
+        return (0.15 * (parent::cost())) + $this->beverage->cost();
     }
 }

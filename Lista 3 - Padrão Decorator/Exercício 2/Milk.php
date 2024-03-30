@@ -16,6 +16,7 @@ class Milk extends CondimentDecorator
     public function __construct(Beverage $beverage)
     {
         $this->beverage = $beverage;
+        $this->setSize($beverage->getSize());
     }
 
     /**
@@ -31,6 +32,6 @@ class Milk extends CondimentDecorator
      */
     public function cost()
     {
-        return 0.10 + $this->beverage->cost();
+        return (0.10 * (parent::cost())) + $this->beverage->cost();
     }
 }
