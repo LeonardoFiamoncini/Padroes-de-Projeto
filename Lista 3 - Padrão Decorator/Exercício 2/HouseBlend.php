@@ -6,6 +6,7 @@ class HouseBlend extends Beverage
 {
     /**
      * HouseBlend constructor.
+     * @param string $size
      */
     public function __construct(string $size = 'P')
     {

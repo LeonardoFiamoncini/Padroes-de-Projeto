@@ -6,6 +6,7 @@ class DarkRoast extends Beverage
 {
     /**
      * DarkRoast constructor.
+     * @param string $size
      */
     public function __construct(string $size = 'P')
     {

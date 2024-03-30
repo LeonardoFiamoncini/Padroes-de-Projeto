@@ -17,8 +17,7 @@ abstract class CondimentDecorator extends Beverage
      */
     public function cost()
     {
-        switch($this->size)
-        {
+        switch ($this->size) {
             case 'P':
                 return 1;
             case 'M':

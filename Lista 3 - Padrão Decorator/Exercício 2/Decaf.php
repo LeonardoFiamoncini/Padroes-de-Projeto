@@ -6,6 +6,7 @@ class Decaf extends Beverage
 {
     /**
      * Decaf constructor.
+     * @param string $size
      */
     public function __construct(string $size = 'P')
     {

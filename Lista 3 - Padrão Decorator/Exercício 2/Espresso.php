@@ -6,6 +6,7 @@ class Espresso extends Beverage
 {
     /**
      * Espresso constructor.
+     * @param string $size
      */
     public function __construct(string $size = 'P')
     {
