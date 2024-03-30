@@ -10,7 +10,7 @@ class DarkRoast extends Beverage
      */
     public function __construct(string $size = 'P')
     {
-        $this->description = 'Dark Roast Coffee';
+        $this->description = 'Size ' . $size . ' - Dark Roast Coffee';
         $this->setSize($size);
     }
 
