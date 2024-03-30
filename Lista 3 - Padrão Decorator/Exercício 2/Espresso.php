@@ -7,9 +7,10 @@ class Espresso extends Beverage
     /**
      * Espresso constructor.
      */
-    public function __construct()
+    public function __construct(string $size = 'P')
     {
         $this->description = 'Espresso';
+        $this->setSize($size);
     }
 
     /**

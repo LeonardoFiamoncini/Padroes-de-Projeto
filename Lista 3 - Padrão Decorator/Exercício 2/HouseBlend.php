@@ -7,9 +7,10 @@ class HouseBlend extends Beverage
     /**
      * HouseBlend constructor.
      */
-    public function __construct()
+    public function __construct(string $size = 'P')
     {
         $this->description = 'House Blend Coffee';
+        $this->setSize($size);
     }
 
     /**

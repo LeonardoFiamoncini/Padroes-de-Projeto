@@ -8,6 +8,11 @@ abstract class Beverage
     protected $description = 'Unknown Beverage';
 
     /**
+     * Atributo utilizado para definir
+     * o tamanho da bebida. Podendo
+     * ser de tamanho pequeno (P),
+     * médio (M) ou grande (G).
+     *
      * @var string $size
      */
     protected $size = 'P';
