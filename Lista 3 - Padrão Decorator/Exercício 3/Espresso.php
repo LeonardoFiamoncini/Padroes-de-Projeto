@@ -10,9 +10,9 @@ class Espresso extends Beverage
      */
     public function __construct(string $size = 'P', int $numberOfDoses = 1)
     {
-        $this->description = 'Size ' . $size . ' - Espresso (Number of doses: ' . $numberOfDoses . ')';
         $this->setSize($size);
         $this->setNumberOfDoses($numberOfDoses);
+        $this->description = 'Size ' . $this->size . ' - Espresso (Number of doses: ' . $this->numberOfDoses . ')';
     }
 
     /**

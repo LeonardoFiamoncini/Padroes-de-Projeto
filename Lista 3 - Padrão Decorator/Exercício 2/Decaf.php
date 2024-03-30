@@ -10,8 +10,8 @@ class Decaf extends Beverage
      */
     public function __construct(string $size = 'P')
     {
-        $this->description = 'Size ' . $size . ' - Decaf Coffee';
         $this->setSize($size);
+        $this->description = 'Size ' . $this->size . ' - Decaf Coffee';
     }
 
     /**

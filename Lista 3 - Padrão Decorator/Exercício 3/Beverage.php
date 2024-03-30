@@ -51,7 +51,12 @@ abstract class Beverage
      */
     public function setNumberOfDoses(int $numberOfDoses)
     {
-        $this->numberOfDoses = $numberOfDoses;
+        if ($numberOfDoses > 0) {
+            $this->numberOfDoses = $numberOfDoses;
+        } else {
+            echo "\n\n Atenção! Número de doses informado incorreto. Portanto, apenas uma dose será utilizada. \n\n";
+            $this->numberOfDoses = 1;
+        }
     }
 
     /**
