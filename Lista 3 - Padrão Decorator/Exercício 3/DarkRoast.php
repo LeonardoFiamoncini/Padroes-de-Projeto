@@ -7,11 +7,13 @@ class DarkRoast extends Beverage
     /**
      * DarkRoast constructor.
      * @param string $size
+     * @param int $numberOfDoses
      */
-    public function __construct(string $size = 'P')
+    public function __construct(string $size = 'P', int $numberOfDoses = 1)
     {
-        $this->description = 'Size ' . $size . ' - Dark Roast Coffee';
+        $this->description = 'Size ' . $size . ' - Dark Roast Coffee (Number of doses: ' . $numberOfDoses . ')';
         $this->setSize($size);
+        $this->setNumberOfDoses($numberOfDoses);
     }
 
     /**
@@ -19,6 +21,6 @@ class DarkRoast extends Beverage
      */
     public function cost()
     {
-        return 0.99;
+        return 0.99 * $this->numberOfDoses;
     }
 }

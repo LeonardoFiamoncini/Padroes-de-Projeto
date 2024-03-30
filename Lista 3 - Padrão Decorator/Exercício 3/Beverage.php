@@ -18,6 +18,11 @@ abstract class Beverage
     protected $size = 'P';
 
     /**
+     * @var int $numberOfDoses
+     */
+    protected $numberOfDoses = 1;
+
+    /**
      * @return string $this->description
      */
     public function getDescription()
@@ -39,6 +44,22 @@ abstract class Beverage
     public function getSize(): string
     {
         return $this->size;
+    }
+
+    /**
+     * @param int $numberOfDoses
+     */
+    public function setNumberOfDoses(int $numberOfDoses)
+    {
+        $this->numberOfDoses = $numberOfDoses;
+    }
+
+    /**
+     * @return int $this->numberOfDoses
+     */
+    public function getNumberOfDoses()
+    {
+        return $this->numberOfDoses;
     }
 
     /**
