@@ -7,6 +7,7 @@ class HouseBlend extends Beverage
     /**
      * HouseBlend constructor.
      * @param string $size
+     * @param int $numberOfDoses
      */
     public function __construct(string $size = 'P', int $numberOfDoses = 1)
     {
