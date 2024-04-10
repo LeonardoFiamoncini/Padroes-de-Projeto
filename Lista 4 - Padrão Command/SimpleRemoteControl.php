@@ -2,8 +2,11 @@
 
 class SimpleRemoteControl
 {
-    private $slot;
+    protected $slot;
 
+    /**
+     * @param Command $command
+     */
     public function setCommand(Command $command)
     {
         $this->slot = $command;

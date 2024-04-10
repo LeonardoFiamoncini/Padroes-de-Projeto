@@ -5,7 +5,10 @@ require_once "./Light.php";
 
 class LightOnCommand implements Command
 {
-    private $light;
+    /**
+     * @var Light
+     */
+    protected $light;
 
     public function __construct(Light $light)
     {

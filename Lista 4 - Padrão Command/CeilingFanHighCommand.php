@@ -5,9 +5,12 @@ require_once "./CeilingFan.php";
 
 class CeilingFanHighCommand implements Command
 {
+    /**
+     * @var CeilingFan
+     */
+    protected $ceilingFan;
 
-    private $ceilingFan;
-    private $prevSpeed;
+    protected $prevSpeed;
 
     public function __construct(CeilingFan $cf)
     {
@@ -16,7 +19,6 @@ class CeilingFanHighCommand implements Command
 
     public function execute()
     {
-
         $this->prevSpeed = $this->ceilingFan->getSpeed();
         $this->ceilingFan->high();
     }
@@ -25,5 +27,4 @@ class CeilingFanHighCommand implements Command
     {
         $this->ceilingFan->setSpeed($this->prevSpeed);
     }
-
 }

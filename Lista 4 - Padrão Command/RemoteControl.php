@@ -7,15 +7,17 @@ class RemoteControl
     /**
      * @var Command[]
      */
-    private $onCommands = [];
+    protected $onCommands = [];
+
     /**
      * @var Command[]
      */
-    private $offCommands = [];
+    protected $offCommands = [];
+
     /**
      * @var Command
      */
-    private $undoCommand; // track the last command
+    protected $undoCommand;
 
     public function __construct()
     {
@@ -28,12 +30,21 @@ class RemoteControl
         $undoCommand = $NoCommand;
     }
 
+    /**
+     * @param int $slot
+     * @param Command $on
+     * @param Command $off
+     */
     public function setCommand(int $slot, Command $on, Command $off)
     {
         $this->onCommands[$slot] = $on;
         $this->offCommands[$slot] = $off;
     }
 
+    /**
+     * @param int $slot
+     * @throws Exception
+     */
     public function onButtonWasPushed(int $slot)
     {
         if (isset($this->onCommands[$slot])) {
@@ -42,6 +53,10 @@ class RemoteControl
         } else throw new Exception('Slot is empty.');
     }
 
+    /**
+     * @param int $slot
+     * @throws Exception
+     */
     public function offButtonWasPushed(int $slot)
     {
         if (isset($this->offCommands[$slot])) {
@@ -56,7 +71,11 @@ class RemoteControl
         $this->undoCommand->undo();
     }
 
-    private function class_name($class): string
+    /**
+     * @param $class
+     * @return string
+     */
+    protected function class_name($class): string
     {
         $className = get_class($class);
         $lastSlash = strpos($className, '\\') + 1;

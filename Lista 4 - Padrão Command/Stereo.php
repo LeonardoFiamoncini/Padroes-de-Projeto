@@ -2,9 +2,15 @@
 
 class Stereo
 {
+    /**
+     * @var string
+     */
+    protected $name = '';
 
-    private $name = '';
-
+    /**
+     * Stereo constructor.
+     * @param string $name
+     */
     public function __construct(string $name)
     {
         if (isset($name))
@@ -21,6 +27,9 @@ class Stereo
         echo $this->name . ' Stereo CD is set.' . PHP_EOL;
     }
 
+    /**
+     * @param int $vol
+     */
     public function setVolume(int $vol)
     {
         echo $this->name . ' Stereo volume is ' . $vol . PHP_EOL;

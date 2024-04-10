@@ -5,8 +5,15 @@ require_once "./CeilingFan.php";
 
 class CeilingFanOnCommand implements Command
 {
-    private $fan;
+    /**
+     * @var CeilingFan
+     */
+    protected $fan;
 
+    /**
+     * CeilingFanOnCommand constructor.
+     * @param CeilingFan $fan
+     */
     public function __construct(CeilingFan $fan)
     {
         $this->fan = $fan;

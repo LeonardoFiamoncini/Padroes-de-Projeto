@@ -4,8 +4,15 @@ require_once "./Command.php";
 
 class MacroCommand implements Command
 {
-    private $commands = array();
+    /**
+     * @var array
+     */
+    protected $commands = array();
 
+    /**
+     * MacroCommand constructor.
+     * @param array $cmds
+     */
     public function __construct(array $cmds)
     {
         $this->commands = $cmds;

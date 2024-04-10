@@ -5,8 +5,15 @@ require_once "./GarageDoor.php";
 
 class GarageDoorOpenCommand implements Command
 {
-    private $garageDoor;
+    /**
+     * @var GarageDoor
+     */
+    protected $garageDoor;
 
+    /**
+     * GarageDoorOpenCommand constructor.
+     * @param GarageDoor $garageDoor
+     */
     public function __construct(GarageDoor $garageDoor)
     {
         $this->garageDoor = $garageDoor;

@@ -5,8 +5,15 @@ require_once "./Light.php";
 
 class LightOffCommand implements Command
 {
-    private $light;
+    /**
+     * @var Light
+     */
+    protected $light;
 
+    /**
+     * LightOffCommand constructor.
+     * @param Light $light
+     */
     public function __construct(Light $light)
     {
         $this->light = $light;

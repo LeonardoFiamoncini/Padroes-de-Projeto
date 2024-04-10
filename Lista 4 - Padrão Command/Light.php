@@ -2,9 +2,15 @@
 
 class Light
 {
+    /**
+     * @var string
+     */
+    protected $name = '';
 
-    private $name = '';
-
+    /**
+     * Light constructor.
+     * @param string $name
+     */
     public function __construct(string $name)
     {
         if (isset($name))

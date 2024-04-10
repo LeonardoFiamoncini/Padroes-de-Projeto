@@ -2,18 +2,30 @@
 
 class CeilingFan
 {
-
-    private $name = '';
+    /**
+     * @var string
+     */
+    protected $name = '';
 
     const HIGH = 3;
     const MEDIUM = 2;
     const LOW = 1;
     const OFF = 0;
 
-    private $speedArr = ['Off', 'Low', 'Medium', 'High'];
+    /**
+     * @var string[]
+     */
+    protected $speedArr = ['Off', 'Low', 'Medium', 'High'];
 
-    private $speed;
+    /**
+     * @var int
+     */
+    protected $speed;
 
+    /**
+     * CeilingFan constructor.
+     * @param string $name
+     */
     public function __construct(string $name)
     {
         if (isset($name))
@@ -54,6 +66,9 @@ class CeilingFan
         return $this->speed;
     }
 
+    /**
+     * @param $toSpeed
+     */
     public function setSpeed($toSpeed)
     {
         switch ($toSpeed) {
