@@ -37,6 +37,7 @@ class Vencedor implements State
     {
         echo "\nParabéns! Você ganhou mais uma bolinha de borracha!\n";
         $this->maquina->liberarBolinha();
+
         if ($this->maquina->getCount() === 0) {
             $this->maquina->setState($this->maquina->getEsgotado());
         } else {

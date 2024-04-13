@@ -26,6 +26,7 @@ class ComCredito implements State
     public function ejetarMoeda()
     {
         echo "\nMoeda ejetada.\n";
+
         $this->maquina->setState($this->maquina->getSemCredito());
     }
 
@@ -38,6 +39,7 @@ class ComCredito implements State
             $this->maquina->setState($this->maquina->getVencedor());
             return;
         }
+
         $this->maquina->setState($this->maquina->getVendido());
     }
 

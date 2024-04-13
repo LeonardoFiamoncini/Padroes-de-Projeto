@@ -36,6 +36,7 @@ class Vendido implements State
     public function entregar()
     {
         $this->maquina->liberarBolinha();
+
         if ($this->maquina->getCount() <= 0) {
             echo "\nOops, as bolinhas de borracha acabaram!\n";
             $this->maquina->setState($this->maquina->getEsgotado());
