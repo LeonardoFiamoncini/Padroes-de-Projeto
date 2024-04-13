@@ -40,6 +40,7 @@ class Vendido implements State
         if ($this->maquina->getCount() <= 0) {
             echo "\nOops, as bolinhas de borracha acabaram!\n";
             $this->maquina->setState($this->maquina->getEsgotado());
+
         } else {
             $this->maquina->setState($this->maquina->getSemCredito());
         }
