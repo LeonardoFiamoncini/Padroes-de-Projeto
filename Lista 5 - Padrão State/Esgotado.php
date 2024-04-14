@@ -20,7 +20,7 @@ class Esgotado implements State
 
     public function inserirMoeda()
     {
-        echo "\nVocê não pode inserir outra moeda, a máquina de bolinhas está esgotada!\n";
+        echo "\nA máquina está vazia!\n";
     }
 
     public function ejetarMoeda()
@@ -30,11 +30,11 @@ class Esgotado implements State
 
     public function virarManivela()
     {
-        echo "\nVocê virou a manivela, porém, não há mais bolinhas de borracha!\n";
+        echo "\nA máquina está vazia!\n";
     }
 
     public function entregar()
     {
-        echo "\nNenhuma bolinha de borracha entregue.\n";
+        echo "\nNenhuma bolinha de borracha fornecida.\n";
     }
 }

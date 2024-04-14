@@ -20,22 +20,22 @@ class Vencedor implements State
 
     public function inserirMoeda()
     {
-        echo "\nVocê não pode fazer isso!\n";
+        echo "\nEspere, sua bolinha de borracha já está saindo da máquina\n";
     }
 
     public function ejetarMoeda()
     {
-        echo "\nVocê não pode fazer isso!\n";
+        echo "\nVocê já acionou a alavanca!\n";
     }
 
     public function virarManivela()
     {
-        echo "\nVocê não pode fazer isso!\n";
+        echo "\nVirar a manivela duas vezes não te dará duas bolinhas de borracha...\n";
     }
 
     public function entregar()
     {
-        echo "\nParabéns! Você ganhou mais uma bolinha de borracha!\n";
+        echo "\nParabéns! Você ganhou mais uma bolinha de borracha de brinde!\n";
         $this->maquina->liberarBolinha();
         if ($this->maquina->getCount() === 0) {
             $this->maquina->setState($this->maquina->getEsgotado());

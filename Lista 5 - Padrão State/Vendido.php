@@ -25,7 +25,7 @@ class Vendido implements State
 
     public function ejetarMoeda()
     {
-        echo "\nVocê já virou a manivela!\n";
+        echo "\nVocê já acionou a alavanca!\n";
     }
 
     public function virarManivela()
@@ -37,7 +37,7 @@ class Vendido implements State
     {
         $this->maquina->liberarBolinha();
         if ($this->maquina->getCount() <= 0) {
-            echo "\nOops, as bolinhas de borracha acabaram!\n";
+            echo "\nOps, as bolinhas de borracha acabaram!\n";
             $this->maquina->setState($this->maquina->getEsgotado());
         } else {
             $this->maquina->setState($this->maquina->getSemCredito());

@@ -32,11 +32,11 @@ class SemCredito implements State
 
     public function virarManivela()
     {
-        echo "\nVocê virou a manivela, mas não há nenhuma moeda.\n";
+        echo "\nVocê virou a manivela, mas nenhuma moeda foi inserida!\n";
     }
 
     public function entregar()
     {
-        echo "\nVocê precisa pagar pelas bolinhas de borracha!\n";
+        echo "\nVocê acionou a alavanca, mas nenhuma moeda foi inserida!\n";
     }
 }
