@@ -91,6 +91,7 @@ class MaquinaDeBolinhas
     public function liberarBolinha()
     {
         echo "\nUma bolinha de borracha saiu da máquina...\n";
+
         if ($this->count !== 0) {
             $this->count -= 1;
         }
